@@ -40,20 +40,20 @@ jobs:
 
 Estrutura de Diretórios
 
-your-repo/
-│
-├── tests/
-│   ├── backend/
-│   │   └── test_api.py
-│   │
-│   ├── frontend/
-│   │   └── test_ui.js
-│   │
-│   └── mobile/
-│       └── test_app.robot
-│
-├── requirements.txt
-└── package.json
+      your-repo/
+      │
+      ├── tests/
+      │   ├── backend/
+      │   │   └── test_api.py
+      │   │
+      │   ├── frontend/
+      │   │   └── test_ui.js
+      │   │
+      │   └── mobile/
+      │       └── test_app.robot
+      │
+      ├── requirements.txt
+      └── package.json
 
 
 
