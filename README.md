@@ -1,3 +1,74 @@
+Exemplo de Pipeline Git (GitHub Actions)
+Estrutura do Pipeline
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run Backend Tests
+        run: |
+          pytest tests/backend/
+
+      - name: Run Frontend Tests
+        run: |
+          npm install
+          npm test --prefix frontend/
+
+      - name: Run Mobile Tests
+        run: |
+          robot tests/mobile/
+
+
+Estrutura de Diretórios
+
+your-repo/
+│
+├── tests/
+│   ├── backend/
+│   │   └── test_api.py
+│   │
+│   ├── frontend/
+│   │   └── test_ui.js
+│   │
+│   └── mobile/
+│       └── test_app.robot
+│
+├── requirements.txt
+└── package.json
+
+
+
+Configuração do GitHub Actions
+Salve o arquivo do pipeline como .github/workflows/ci.yml. Isso irá executar os testes toda vez que houver um push na branch main.
+
+Resumo da Estrutura do Pipeline
+Checkout do Repositório: Pega o código mais recente.
+Configuração do Ambiente: Configura o Python e instala as dependências.
+Execução dos Testes:
+Backend: Executa testes com pytest.
+Frontend: Executa testes com npm.
+Mobile: Executa testes com robot.
+
+
 # Estoque
 Exemplo para testes
 
