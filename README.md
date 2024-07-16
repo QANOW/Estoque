@@ -24,8 +24,10 @@ python
 
  2. Web (Front-End)
              
-javascript
-  describe('Gerenciamento de Estoque', () => {
+javascript 
+
+
+      describe('Gerenciamento de Estoque', () => {
            it('Deve permitir a entrada de estoque com dados válidos', () => {
                cy.visit('/estoque');
                cy.get('#data_entrada').type('2023-06-01');
@@ -41,24 +43,26 @@ javascript
        });
 
 
- 3. Mobile (Appium)
+ 4. Mobile (Appium)
 
 robot
-* Settings *
-Library    AppiumLibrary
 
-* Test Cases *
-Testar Entrada de Estoque em Mobile
-    Open Application
-    Input Data Entrada    2023-06-01
-    Input Fornecedor    "Fornecedor Válido"
-    Input Produto    "Produto A"
-    Input Quantidade    10
-    Input Lote    "Lote123"
-    Select Produto Perecível
-    Input Data Validade    2023-12-31
-    Click Botão Salvar
-    Should See Confirm Message    "Entrada registrada com sucesso"
+
+      * Settings *
+      Library    AppiumLibrary
+      
+      * Test Cases *
+      Testar Entrada de Estoque em Mobile
+          Open Application
+          Input Data Entrada    2023-06-01
+          Input Fornecedor    "Fornecedor Válido"
+          Input Produto    "Produto A"
+          Input Quantidade    10
+          Input Lote    "Lote123"
+          Select Produto Perecível
+          Input Data Validade    2023-12-31
+          Click Botão Salvar
+          Should See Confirm Message    "Entrada registrada com sucesso"
 
 
 ---
@@ -68,7 +72,7 @@ Testar Entrada de Estoque em Mobile
  Backend
 
 1. Teste de Endpoint para Registro de Entrada
-   - Verificar se o endpoint `/estoque` aceita dados válidos e retorna status 201.
+   - Verificar se o endpoint `/estoque` aceita dados válidos e retorna status 200.
 
 2. Teste de Resposta com Dados Inválidos
    - Enviar dados com uma data de entrada futura e verificar se retorna erro 400.
@@ -87,17 +91,21 @@ Testar Entrada de Estoque em Mobile
 
  Consulta de Estoque
 
-sql
-SELECT * FROM estoque
-WHERE data_entrada < CURRENT_DATE
-ORDER BY data_entrada DESC;
+  sql
+  
+     SELECT * FROM estoque
+     WHERE data_entrada < CURRENT_DATE
+     ORDER BY data_entrada DESC;
 
 
  Script de Teste para Verificar Estoque
 
 sql
-INSERT INTO estoque (data_entrada, fornecedor, produto, quantidade, lote, perecivel, data_validade)
-VALUES ('2023-06-01', 'Fornecedor Válido', 'Produto A', 10, 'Lote123', TRUE, '2023-12-31');
+
+
+    INSERT INTO estoque (data_entrada, fornecedor, produto, quantidade, lote, perecivel, data_validade)
+    VALUES ('2023-06-01', 'Fornecedor Válido', 'Produto A', 10, 'Lote123', TRUE, '2023-12-31');
 
 -- Verificar se o registro foi adicionado
-SELECT COUNT(*) FROM estoque WHERE produto = 'Produto A';
+
+    SELECT COUNT(*) FROM estoque WHERE produto = 'Produto A';
