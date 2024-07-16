@@ -6,7 +6,8 @@ Exemplo para testes
  1. Backend (API)
 
 python
-import requests
+
+    import requests
 
 def test_create_entry():
     response = requests.post('http://api.exemplo.com/estoque', json={
