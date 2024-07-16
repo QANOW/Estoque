@@ -7,10 +7,9 @@ Exemplo para testes
 
 python
 
-    import requests
-
-def test_create_entry():
-    response = requests.post('http://api.exemplo.com/estoque', json={
+    import requests 
+     def test_create_entry():
+     response = requests.post('http://api.exemplo.com/estoque', json={
         "data_entrada": "2023-06-01",
         "fornecedor": "Fornecedor Válido",
         "produto": "Produto A",
@@ -24,22 +23,22 @@ def test_create_entry():
 
 
  2. Web (Front-End)
-
+             
 javascript
-describe('Gerenciamento de Estoque', () => {
-    it('Deve permitir a entrada de estoque com dados válidos', () => {
-        cy.visit('/estoque');
-        cy.get('#data_entrada').type('2023-06-01');
-        cy.get('#fornecedor').select('Fornecedor Válido');
-        cy.get('#produto').type('Produto A');
-        cy.get('#quantidade').type('10');
-        cy.get('#lote').type('Lote123');
-        cy.get('#perecivel').check();
-        cy.get('#data_validade').type('2023-12-31');
-        cy.get('#salvar').click();
-        cy.contains('Entrada registrada com sucesso');
-    });
-});
+  describe('Gerenciamento de Estoque', () => {
+           it('Deve permitir a entrada de estoque com dados válidos', () => {
+               cy.visit('/estoque');
+               cy.get('#data_entrada').type('2023-06-01');
+               cy.get('#fornecedor').select('Fornecedor Válido');
+               cy.get('#produto').type('Produto A');
+               cy.get('#quantidade').type('10');
+               cy.get('#lote').type('Lote123');
+               cy.get('#perecivel').check();
+               cy.get('#data_validade').type('2023-12-31');
+               cy.get('#salvar').click();
+               cy.contains('Entrada registrada com sucesso');
+           });
+       });
 
 
  3. Mobile (Appium)
