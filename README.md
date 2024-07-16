@@ -61,12 +61,12 @@ Configuração do GitHub Actions
 Salve o arquivo do pipeline como .github/workflows/ci.yml. Isso irá executar os testes toda vez que houver um push na branch main.
 
 Resumo da Estrutura do Pipeline
-Checkout do Repositório: Pega o código mais recente.
-Configuração do Ambiente: Configura o Python e instala as dependências.
-Execução dos Testes:
-Backend: Executa testes com pytest.
-Frontend: Executa testes com npm.
-Mobile: Executa testes com robot.
+  Checkout do Repositório: Pega o código mais recente.
+  Configuração do Ambiente: Configura o Python e instala as dependências.
+  Execução dos Testes:
+  Backend: Executa testes com pytest.
+  Frontend: Executa testes com npm.
+  Mobile: Executa testes com robot.
 
 
 # Estoque
